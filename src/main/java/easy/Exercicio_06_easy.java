@@ -3,7 +3,7 @@ package easy;
 import javax.swing.*;
 
 public class Exercicio_06_easy {
-    public String varificaAprovacao(double primeiraNota,double segundaNota) {
+    public String verificaAprovacao(double primeiraNota,double segundaNota) {
         double mediaNotas;
         mediaNotas = (primeiraNota + segundaNota) / 2;
 

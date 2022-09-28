@@ -56,7 +56,7 @@ public class execucao_exerc_easy {
             Exercicio_06_easy ex06_easy = new Exercicio_06_easy();
         double primeiraNota = 4;
         double segundaNota = 4;
-        System.out.println(ex06_easy.varificaAprovacao(primeiraNota,segundaNota));
+        System.out.println(ex06_easy.verificaAprovacao(primeiraNota,segundaNota));
         }
 
         if(selecionaExercicio == 7 ){
