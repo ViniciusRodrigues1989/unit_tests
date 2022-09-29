@@ -1,10 +1,8 @@
 package easy;
 
-import javax.swing.*;
-
 public class Exercicio_09_easy {
 
-    public void calculaTabuada (int numeroDigitado) {
+    public int calculaTabuada (int numeroDigitado) {
 
         int i = 1, resultado =0;
 
@@ -18,5 +16,6 @@ public class Exercicio_09_easy {
             i++;
 
             }
-        }
+        return i;
+    }
     }
