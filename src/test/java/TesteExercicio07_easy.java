@@ -3,62 +3,80 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.text.DecimalFormat;
+
 public class TesteExercicio07_easy {
+    static DecimalFormat formating;
 
-static Exercicio_07_easy ex07_easy;
+    static Exercicio_07_easy ex07_easy;
 
-@BeforeClass
+    @BeforeClass
+    public static void beforeClass() {
+        ex07_easy = new Exercicio_07_easy();
+        formating = new DecimalFormat("#,###.00");
 
-    public static void beforeClass(){ ex07_easy = new Exercicio_07_easy();}
-
-    @Test
-
-    public void testInssPrimeiraCondicao(){
-    double valorEsperado = 0;
-        double salario = 900.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
-
-        Assert.assertEquals("O valor atual é diferente do esperado",valorEsperado,valorAtual);
     }
 
     @Test
+    public void testInssPrimeiraFaixa() {
+        String valorEsperado = "78,38";
+        String valorAtual = formating.format(ex07_easy.calculaInss(1045.00));
 
-    public void testInssSegundaCondicao(){
-        double valorEsperado = 82.50;
-        double salario = 1100.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
-
-        Assert.assertEquals("O valor atual é diferente do esperado",valorEsperado,valorAtual);
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
     }
-    @Test
-    public void testInssTerceiraCondicao(){
-        double valorEsperado = 153.00;
-        double salario = 1700.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
 
-        Assert.assertEquals("O valor atual é diferente do esperado",valorEsperado,valorAtual);
-    }
     @Test
-    public void testInssQuartaCondicao(){
-        double valorEsperado = 324.00;
-        double salario = 2700.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
+    public void testInssSegundaFaixa() {
+        String valorEsperado = "94,05";
+        String valorAtual = formating.format(ex07_easy.calculaInss(1045.01));
 
-        Assert.assertEquals("O valor atual é diferente do esperado",valorEsperado,valorAtual);
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
     }
-    @Test
-    public void testInssQuintaCondicao(){
-        double valorEsperado = 728.00;
-        double salario = 5200.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
 
-        Assert.assertEquals("O valor atual é diferente do esperado",valorEsperado,valorAtual);
-    }
     @Test
-    public void testInssSextaCondicao() {
-        double valorEsperado = 1120.00;
-        double salario = 8000.00;
-        double valorAtual = ex07_easy.calculaInss(salario);
+    public void testInssSegundaFaixaFinal() {
+        String valorEsperado = "188,06";
+        String valorAtual = formating.format(ex07_easy.calculaInss(2089.60));
+
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
+    }
+
+    @Test
+    public void testInssTerceiraFaixa() {
+        String valorEsperado = "250,75";
+        String valorAtual = formating.format(ex07_easy.calculaInss(2089.61));
+
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
+    }
+
+    @Test
+    public void testInssTerceiraFaixaFinal() {
+        String valorEsperado = "376,13";
+        String valorAtual = formating.format(ex07_easy.calculaInss(3134.40));
+
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
+    }
+
+    @Test
+    public void testInssQuartaFaixa() {
+        String valorEsperado = "438,82";
+        String valorAtual = formating.format(ex07_easy.calculaInss(3134.41));
+
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
+    }
+
+    @Test
+    public void testInssQuartaFaixaFinal() {
+        String valorEsperado = "854,15";
+        String valorAtual = formating.format(ex07_easy.calculaInss(6101.06));
+
+        Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
+    }
+
+    @Test
+    public void testInssUltimaFaixa() {
+        String valorEsperado = "854,15";
+        String valorAtual = formating.format(ex07_easy.calculaInss(6101.07));
 
         Assert.assertEquals("O valor atual é diferente do esperado", valorEsperado, valorAtual);
     }

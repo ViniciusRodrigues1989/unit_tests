@@ -1,4 +1,4 @@
-import easy.Exercicio_02_easy;
+/*import easy.Exercicio_02_easy;
 import easy.Exercicio_09_easy;
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,3 +14,4 @@ public class TesteExercicio09_easy {
         Assert.assertEquals("O valor atual é diferente do esperado",msgmEsperada,msgmAtual);
     }
 }
+*/
