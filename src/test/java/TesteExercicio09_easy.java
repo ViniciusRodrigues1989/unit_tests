@@ -1,17 +1,20 @@
-/*import easy.Exercicio_02_easy;
+import easy.Exercicio_02_easy;
 import easy.Exercicio_09_easy;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TesteExercicio09_easy {
-    @Test
 
-    public void testCalculaTabuada(){
-        Exercicio_09_easy ex09_easy = new Exercicio_09_easy();
-        String msgmEsperada ="numeroDigitado + \"x\" + i + \"=\" + resultado" ;
-        String msgmAtual = ex09_easy.calculaTabuada(2);
+        static Exercicio_09_easy ex09_easy;
 
-        Assert.assertEquals("O valor atual é diferente do esperado",msgmEsperada,msgmAtual);
+        @BeforeClass
+        public static void beforeClass(){
+            ex09_easy = new Exercicio_09_easy();
+        }
+
+        @Test
+        public void testeCalculaTabuada(){
+            ex09_easy.calculaTabuada(5);
+        }
     }
-}
-*/

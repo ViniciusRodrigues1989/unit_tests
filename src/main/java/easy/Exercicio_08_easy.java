@@ -15,7 +15,10 @@ public class Exercicio_08_easy {
 
 
         if (salario >= 1903.99 && salario <= 2826.65) {
-            impostoRenda = (salario * 0.075) - 142.79;
+            impostoRenda = (salario * 0.075) - 142.80;
+            if (impostoRenda <= 0) {
+                impostoRenda = 0.0;
+            }
         }
 
 
@@ -33,12 +36,12 @@ public class Exercicio_08_easy {
         return impostoRenda;
     }
 
-        public double calculaSalarioLiquido(double salario, double impostoRenda){
-           return  salario - impostoRenda;
+    public double calculaSalarioLiquido(double salario, double impostoRenda) {
+        return salario - impostoRenda;
 
-             }
+    }
 
-        }
+}
 
 
 // System.out.println("Seu Salário BRUTO será de R$:" + salario + " \n O Salário Liquido será de:" + salarioLiquido + "\n O valor devido de Imposto de Renda será de:" + impostoRenda);
